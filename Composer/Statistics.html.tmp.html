@@ -13,35 +13,55 @@
 			body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin:30px}body,p,table,td,th{font:13px/1.4 Arial,sans-serif}.container{max-width:960px;margin:auto}img,svg{width:100%}h1,h2,h3,h4{font-weight:400;margin:0}h1 dt{display:inline;margin-left:10px;font-size:14px}h3{margin-bottom:10px;font-weight:700}h4{color:grey}h4 a{color:#09c;text-decoration:none}h4 a:hover{color:#069;text-decoration:underline}h3 a{color:#09c;text-decoration:none}hr{margin:25px 0 40px;height:0;border:0;border-top:1px solid #ccc}#left{width:620px;margin-right:18px;margin-top:-1.2rem;float:left}#right{width:320px;float:right}#left svg{margin:-1.5rem 0}#monthly_heatmap{overflow:hidden}#monthly_heatmap svg{margin:-1.5rem 0}table{margin:0 0 40px;border:0;border-spacing:0;width:100%}table td,table th{text-align:right;padding:4px 5px 3px 5px}table th{text-align:right;padding:6px 5px 5px 5px}table td:first-of-type,table th:first-of-type{text-align:left;padding-left:2px}table td:last-of-type,table th:last-of-type{text-align:right;padding-right:2px}td hr{margin:5px 0}table th{font-weight:400}table thead th{font-weight:700;background:#eee}#eoy table td:after{content:"%"}#eoy table td:first-of-type:after,#eoy table td:last-of-type:after,#eoy table td:nth-of-type(4):after{content:""}#eoy table th{text-align:right}#eoy table th:first-of-type{text-align:left}#eoy table td:after{content:"%"}#eoy table td:first-of-type:after,#eoy table td:last-of-type:after{content:""}#ddinfo table td:nth-of-type(3):after{content:"%"}#ddinfo table th{text-align:right}#ddinfo table td:first-of-type,#ddinfo table td:nth-of-type(2),#ddinfo table th:first-of-type,#ddinfo table th:nth-of-type(2){text-align:left}#ddinfo table td:nth-of-type(3):after{content:"%"}
 			@media print{hr{margin:25px 0}body{margin:0}.container{max-width:100%;margin:0}#left{width:55%;margin:0}#left svg{margin:0 0 -10%}#left svg:first-of-type{margin-top:-30%}#right{margin:0;width:45%}}
 			h3 dt{display:block;font-size:small;color:grey;font-weight:lighter;margin-left:0}
-			@media only screen and (max-width: 655px) {
-				body{margin:3%}.container{width:100%;max-width:100%;margin:0}#left{width:100%;margin:0}#left svg{margin:0 0 0;height:auto}#right{width:97%}#right{margin:0;width:100%}}
+			@media only screen and (max-width: 690px) {
+				body{margin:3%}.container{width:100%;max-width:100%;margin:0}#left{width:100%;margin:0}#left svg{margin:0 0 0;height:auto}#right{width:97%}#right{margin:0;width:100%}}.break {flex-basis: 100%;height: 0;}
 			}
 		</style>
 		<style>
+			/*This is the CSS for the accordian menu elements*/
 			details {border:1px solid #aaa; border-radius:4px; padding:0.5em 0.5em 0;}
 			summary {font-weight:700; margin:-0.5em -0.5em 0; padding:0.5em; display:block; font-size:medium; margin-left:0}
 			details[open] {padding:0.5em;}
 			details[open] summary {border-bottom:1px solid #aaa; margin-bottom:0.5em;}
+			/*This is the CSS for the flex-box menu item being responsive*/
+			.flex-grid {display:flex;flex-flow:wrap;}
+			[class*="col-"] {box-sizing:border-box;}
+			@media (min-width: 690px) {.shownbig {display:none}}
+			@media (max-width: 690px) {.flex-grid {display: block;}.hiddensmall{display:none}
+				div h1{font-size:1.8em;margin-top:-0.2em;margin-left:0.6em} code{font-size:0.9em}}
+			@media (max-width: 320px) {div h1{font-size:1.8em;margin-top:-0.2em;margin-left:0.6em}}
+			.flex-grid > div {padding:5px;font-family:'lucida console',monospace;text-align:left}
 		</style>
 	</head>
 	<body>
-		<div style="display:flex;font-family:'lucida console', monospace;">
-		<code style="display:block;line-height:1.1em;padding:10px">
-			<span style="color:#fa7ab0">&nbsp;&nbsp;&nbsp;███████████████</span><br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:black">▄▓███▓▄    <br>
-			<span style="color:#ffc647">█████</span>▄██▀ &nbsp;▜█▓   <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██▌          <br>
-			<span style="color:#11c885">█████</span>▜██▄  &nbsp;▄█▓   <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▀█████▀    </span><br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#c59afc">███████</span>
-		</code><div style="display:block">
-			<h1><b>Composer Symphony Statistics</b></h1><br>
-			<h4>Last updated on Mar 13, 2023</h4>
-			<h4>⚠️ - Statistics not accurate, backtest may be incomplete</h4>
-			<h4>🚀 - Longtime good performer with live money</h4></div></div><br>
+		<div class="flex-grid">
+			<div class="col-3">
+				<div style="display:flex;">
+				<code style="padding:0px;display:block;line-height:1.1em;">
+					<span style="color:#fa7ab0">&nbsp;&nbsp;&nbsp;███████████████</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:black">▄▓███▓▄    <br>
+						<span style="color:#ffc647">█████</span>▄██▀ &nbsp;▜█▓   <br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██▌          <br>
+						<span style="color:#11c885">█████</span>▜██▄  &nbsp;▄█▓   <br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▀█████▀    </span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#c59afc">███████</span>
+				</code>
+					<div class='display:block;padding:5px'>
+						<h1 class="shownbig"><b>Composer Symphony Statistics</b></h1>
+					</div>
+				</div>
+			</div>
+			<div class="col-9">
+				<h1 class="hiddensmall"><b>Composer Symphony Statistics</b></h1>
+				<h4>Last updated on Mar 20, 2023</h4>
+				<h4>⚠️ - Statistics not accurate/do not run to present, backtest incomplete</h4>
+				<h4>🚀 - Longtime performer running with live money, not just the simulation</h4>
+			</div>
+		</div>
+		<br>
 		<dt><h3>Current Strategy<dt>
 		</dt></h3></dt>
-		<h3><dt>This is what I am invested in currently, but please note that what I do changes frequently, often multiple times per week, so please note the "last updated" line above. The amount you may invest with for each Symphony and how much risk you want to take is up to you. Especially look at the <i>Volatility</i>, <i>Max Drawdown</i>, and how far it backtests on the statistical pages before investing in any of the listed strategies, <b>regardless of their estimated annual returns</b>. The risk bar on the left is calculated by using the sum of the Volatility and Max Drawdown and averaging them, but anything over 50% in either measure automatically earns a red status. I am not a certified financial advisor, all investments are made at your own risk.</dt></h3>
+		<h3><dt>This is what I am invested in currently, but please note that what I invest in changes frequently, often multiple times per week, so please note the "last updated" line above. The amount you may invest with for each Symphony and how much risk you want to take is up to you. Especially look at the <i>Volatility</i>, <i>Max Drawdown</i>, and how far it backtests on the statistical pages before investing in any of the listed strategies, <b>regardless of their estimated annual returns</b>. The risk bar on the left is calculated by using the sum of the Volatility and Max Drawdown and averaging them, but anything over 50% in either measure automatically earns a red status. I am not a certified financial advisor, all investments are made at your own risk.<br><br>It is also <b>very important</b> to check and make sure that the title you see for each Symphony on this page matches the Symphony that you actually invest in when clicking the "Invest" link. If they do not match, do NOT invest in the strategy as that means it has changed since I ran the backtests and simulations.</dt></h3>
 		<hr style='margin-top:10px;margin-bottom:5px'>
 		<h3><a href='file:///Users/ajkblue/Documents/Local/GitHub/ajkblue.github.io/Composer/Composer/Current%20Strategy/v1%20BBD%20-%20Beta%20vs%20Bonds%20vs%20Defensive.html'>v1 BBD - Beta vs Bonds vs Defensive</a><dt><meter low=".33" optimum=".15" high=".66" value=".5081"></meter> Volatility (ann.): 79.61%, Max Drawdown: -30.1%, Backtest: 12 Dec, 2019 - <a href='https://app.composer.trade/symphony/pgt36Q0pZ4AchslJWIDV/details'>Invest</a></dt></h3>
 		<h3><a href='file:///Users/ajkblue/Documents/Local/GitHub/ajkblue.github.io/Composer/Composer/Current%20Strategy/v2%20TEC_SOX_HIB%20Baller%20-%20UVXY.html'>v2 TEC/SOX/HIB Baller - UVXY</a><dt><meter low=".33" optimum=".15" high=".66" value=".7081"></meter> Volatility (ann.): 97.09%, Max Drawdown: -29.26%, Backtest: 10 Dec, 2019 - <a href='https://app.composer.trade/symphony/uqJRVoVrGEDrDc6U4HTn/details'>Invest</a></dt></h3>
